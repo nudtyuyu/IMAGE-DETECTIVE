@@ -9,7 +9,7 @@ Source Code for IMAGE-DETECTIVE
 
 ##### 1.1 Dependency
 ```
-Pyqt5,Opencv
+Pyqt5,Opencv,libjpeg,libjpeg-turbo (source code of libjpeg is included in our project)
 ```
 
 ##### 1.2 Sorce Code

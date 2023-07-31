@@ -1,0 +1,2 @@
+./addtest.bat
+./mattest.bat

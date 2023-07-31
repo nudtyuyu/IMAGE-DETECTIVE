@@ -1,0 +1,33 @@
+这是一个方便的基于neon指令实现的运算函数库
+
+一、文件目录
+neoncal.h: 已实现的neon运算函数声明，方便用户直接调用
+neoncal.c: 内含加法和乘法的neon运算函数实现
+neon_mat_cal.c: 内含矩阵乘法的neon实现
+neon_exp.c: 内含指数函数的neon实现
+timetest: 性能测试文件夹，通过调用其中的control.bat可以看到简单的性能测试结果,
+            在文件result中可以看到作者在FT-2000开发板上的测试结果
+
+
+二、用户函数
+
+#函数功能：对连续数据做加法操作，即c[i]=a[i]+b[i]
+#参数解释：a,b,c代表三个数组指针，num表示数组大小，w表示单个数据的位数，type表示数据类型(0表示整数，1表示浮点数)
+void neon_add(void *a,void *b,void *c,int num,int w,int type)
+
+#函数功能：对连续数据做乘法操作，即c[i]=a[i]*b[i]
+#参数解释：a,b,c代表三个数组指针，num表示数组大小，w表示单个数据的位数，type表示数据类型(0表示整数，1表示浮点数)
+void neon_mul(void *a,void *b,void *c,int num,int w,int type)
+
+#函数功能：做矩阵乘法运算，即矩阵c为矩阵a与矩阵b的乘积
+#参数解释：a,b,c代表三个数组指针，m,n,k是矩阵参数(a为m*n的矩阵，b为n*k的矩阵，c为m*k的矩阵)，w表示单个数据的位数，type表示数据类型(0表示整数，1表示浮点数)
+void neon_mat_mul(void *a,void *b,void *c,int m,int n,int k,int w,int type)
+
+#函数功能：对连续数据做exp操作，即c[i]=exp(a[i])
+#参数解释：a,c代表两个数组指针，num表示数组大小
+void neon_exp(float *a,float *c,int num);
+
+三、作者列表
+
+Banish:李剑锋，作者邮箱为2068309344@qq.com
+

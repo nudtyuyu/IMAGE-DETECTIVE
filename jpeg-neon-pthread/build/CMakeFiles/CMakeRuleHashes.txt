@@ -1,0 +1,10 @@
+# Hashes of file build rules.
+ffa71ba7daf073268b43e7e2b8e5fa7f CMakeFiles/croptest
+baa5faf4cba46a74d9ab5be757b09fbd CMakeFiles/deb
+75bc953cdd7b3460a7ff549f39a52444 CMakeFiles/dist
+bec35cf48021c00729000bfedf500ec4 CMakeFiles/rpm
+a5c8e41146041f7a1039f35be8589554 CMakeFiles/srpm
+dcfd56fa1955a50851c54464002ba729 CMakeFiles/tarball
+3bae60d85b4978eec5cdfbb7ae607030 CMakeFiles/testclean
+04a48a6196ae9e1ca2b4fdb62189a918 CMakeFiles/tjtest
+6736e2be851640d1d439fd1b9582a204 CMakeFiles/uninstall

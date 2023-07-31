@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/GUI/jpeg-neon-pthread/jinclude.h
+jconfig.h
+/root/GUI/jpeg-neon-pthread/jconfig.h
+jconfigint.h
+/root/GUI/jpeg-neon-pthread/jconfigint.h
+stddef.h
+-
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+errno.h
+-
+
+/root/GUI/jpeg-neon-pthread/rdjpgcom.c
+jinclude.h
+/root/GUI/jpeg-neon-pthread/jinclude.h
+locale.h
+-
+ctype.h
+-
+fcntl.h
+-
+io.h
+-
+
+jconfig.h
+
+jconfigint.h
+

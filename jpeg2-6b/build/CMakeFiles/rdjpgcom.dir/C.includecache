@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/GUI/jpeg2-6b/jinclude.h
+jconfig.h
+/root/GUI/jpeg2-6b/jconfig.h
+jconfigint.h
+/root/GUI/jpeg2-6b/jconfigint.h
+stddef.h
+-
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+errno.h
+-
+
+/root/GUI/jpeg2-6b/rdjpgcom.c
+jinclude.h
+/root/GUI/jpeg2-6b/jinclude.h
+locale.h
+-
+ctype.h
+-
+fcntl.h
+-
+io.h
+-
+
+jconfig.h
+
+jconfigint.h
+

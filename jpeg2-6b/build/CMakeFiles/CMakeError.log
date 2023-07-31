@@ -1,0 +1,111 @@
+Performing C SOURCE FILE Test RIGHT_SHIFT_IS_UNSIGNED failed with the following compile output:
+Change Dir: /root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b7253/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b7253.dir/build.make CMakeFiles/cmTC_b7253.dir/build
+make[1]: Entering directory '/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b7253.dir/src.c.o
+/usr/bin/cc   -DRIGHT_SHIFT_IS_UNSIGNED   -o CMakeFiles/cmTC_b7253.dir/src.c.o   -c /root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b7253
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7253.dir/link.txt --verbose=1
+/usr/bin/cc  -DRIGHT_SHIFT_IS_UNSIGNED    CMakeFiles/cmTC_b7253.dir/src.c.o  -o cmTC_b7253 
+make[1]: Leaving directory '/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp'
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+      #include <stdio.h>
+      #include <stdlib.h>
+      int is_shifting_signed (long arg) {
+        long res = arg >> 4;
+        if (res == -0x7F7E80CL)
+          return 1; /* right shift is signed */
+        /* see if unsigned-shift hack will fix it. */
+        /* we can't just test exact value since it depends on width of long... */
+        res |= (~0L) << (32-4);
+        if (res == -0x7F7E80CL)
+          return 0; /* right shift is unsigned */
+        printf("Right shift isn't acting as I expect it to.\n");
+        printf("I fear the JPEG software will not work at all.\n\n");
+        return 0; /* try it with unsigned anyway */
+      }
+      int main (void) {
+        exit(is_shifting_signed(-0x7F7E80B1L));
+      }
+Performing C SOURCE FILE Test HAVE_VLD1_S16_X3 failed with the following output:
+Change Dir: /root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6009a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6009a.dir/build.make CMakeFiles/cmTC_6009a.dir/build
+make[1]: Entering directory '/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6009a.dir/src.c.o
+/usr/bin/cc   -DHAVE_VLD1_S16_X3   -o CMakeFiles/cmTC_6009a.dir/src.c.o   -c /root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp/src.c
+/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp/src.c:9:26: warning: implicit declaration of function ‘vld1_s16_x3’; did you mean ‘vld1_s16_x2’? [-Wimplicit-function-declaration]
+     int16x4x3_t output = vld1_s16_x3(input);
+                          ^~~~~~~~~~~
+                          vld1_s16_x2
+/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp/src.c:9:26: error: invalid initializer
+make[1]: *** [CMakeFiles/cmTC_6009a.dir/build.make:66: CMakeFiles/cmTC_6009a.dir/src.c.o] Error 1
+make[1]: Leaving directory '/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_6009a/fast] Error 2
+
+Source file was:
+
+  #include <arm_neon.h>
+  int main(int argc, char **argv) {
+    int16_t input[] = {
+      (int16_t)argc, (int16_t)argc, (int16_t)argc, (int16_t)argc,
+      (int16_t)argc, (int16_t)argc, (int16_t)argc, (int16_t)argc,
+      (int16_t)argc, (int16_t)argc, (int16_t)argc, (int16_t)argc
+    };
+    int16x4x3_t output = vld1_s16_x3(input);
+    vst3_s16(input, output);
+    return (int)input[0];
+  }
+Performing C SOURCE FILE Test HAVE_VLD1Q_U8_X4 failed with the following output:
+Change Dir: /root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_18996/fast"
+/usr/bin/make -f CMakeFiles/cmTC_18996.dir/build.make CMakeFiles/cmTC_18996.dir/build
+make[1]: Entering directory '/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_18996.dir/src.c.o
+/usr/bin/cc   -DHAVE_VLD1Q_U8_X4   -o CMakeFiles/cmTC_18996.dir/src.c.o   -c /root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp/src.c
+/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp/src.c:22:27: warning: implicit declaration of function ‘vld1q_u8_x4’; did you mean ‘vld1q_u8_x2’? [-Wimplicit-function-declaration]
+     uint8x16x4_t output = vld1q_u8_x4(input);
+                           ^~~~~~~~~~~
+                           vld1q_u8_x2
+/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp/src.c:22:27: error: invalid initializer
+make[1]: *** [CMakeFiles/cmTC_18996.dir/build.make:66: CMakeFiles/cmTC_18996.dir/src.c.o] Error 1
+make[1]: Leaving directory '/root/GUI/jpeg2-6b/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_18996/fast] Error 2
+
+Source file was:
+
+  #include <arm_neon.h>
+  int main(int argc, char **argv) {
+    uint8_t input[] = {
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc,
+      (uint8_t)argc, (uint8_t)argc, (uint8_t)argc, (uint8_t)argc
+    };
+    uint8x16x4_t output = vld1q_u8_x4(input);
+    vst4q_u8(input, output);
+    return (int)input[0];
+  }
