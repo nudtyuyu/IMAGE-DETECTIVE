@@ -8,7 +8,9 @@ Source Code for IMAGE-DETECTIVE
 ### 1. Installation
 
 ##### 1.1 Dependency
+```
 Pyqt5,Opencv
+```
 
 ##### 1.2 Sorce Code
 ```bash
