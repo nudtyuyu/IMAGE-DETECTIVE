@@ -1,7 +1,8 @@
 # IMAGE-DETECTIVE
 Source Code for IMAGE-DETECTIVE
 ### 0. Enviroment
-**OS:** Debian
+**OS:** Debian 
+
 **Architecture:** FT-2000/4 (Arm v8)
 
 ### 1. Installation
@@ -21,4 +22,5 @@ $> cd IMAGE-DETECTIVE
 $> python3 show.py
 ```
 Then, you can log in using the username and password you set, or the default one (root, 123456).
+
 When you access to the Main Interface, you can use the GUI with your mouse and keyboard.
