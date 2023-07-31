@@ -6,7 +6,7 @@ Source Code for IMAGE-DETECTIVE
 **Architecture:** FT-2000/4 (Arm v8)
 
 ### 1. Installation
-This Part 
+
 ##### 1.1 Dependency
 Pyqt5,Opencv
 
