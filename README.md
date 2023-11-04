@@ -16,6 +16,16 @@ Pyqt5,Opencv,libjpeg,libjpeg-turbo (source code of libjpeg is included in our pr
 ```bash
 $> git clone https://github.com/nudtyuyu/IMAGE-DETECTIVE.git
 ```
+The newest version of NEONMATH is published by author Jianfeng Li, you can access by
+
+```bash
+$> git clone https://gitee.com/lluuooyy/neon-math.git
+```
+replace the old folder neonlib
+```bash
+$> cp -r neon-math neonlib 
+```
+
 
 ### 2. Usage
 The first step is to launch the login interface.
