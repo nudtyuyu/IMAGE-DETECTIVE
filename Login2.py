@@ -2,10 +2,10 @@
 
 '''
 * File name: Login2.c
-* Author: Healer(胡玉)
+* Author: Healer(Yu Hu)
 * Author's blog: https://github.com/nudtyuyu
 * Date: Aug 18th, 2022
-* 描述：本文件实现了用户登录界面，包括界面框架的构建，各个控件的摆放和性质设置，各个按钮链接的功能等
+* Description：This document realizes the user's Login interface, including the construction of the interface framework, the placement and property setting of each control, and the function of each button link
 '''
 
 
