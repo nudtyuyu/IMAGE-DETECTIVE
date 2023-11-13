@@ -5,6 +5,8 @@ Source Code for IMAGE-DETECTIVE
 
 **Architecture:** FT-2000/4 (Arm v8)
 
+**NOTE: The Code will not run correctly if your architecture is not suitable, because X86 has no NEON Instruction!**
+
 ### 1. Installation
 
 ##### 1.1 Dependency
